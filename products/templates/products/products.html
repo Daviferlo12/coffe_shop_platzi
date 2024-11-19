@@ -1,42 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCT LIST</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .product {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .product h2 {
-            margin: 0 0 10px;
-            font-size: 1.5rem;
-            color: #333;
-        }
-        .product p {
-            margin: 5px 0;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <h1>PRODUCT LIST</h1>
-    <div>
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-3xl font-bold">PRODUCT LIST</h1>
+    <div class="flex">
         {% for product in products_list %}
-        <div class="product">
+        <div class="rounded-md border-2 border-rose-600">
             <h2>{{ product.name }}</h2>
             <p><strong>Description:</strong> {{ product.description }}</p>
             <p><strong>Price:</strong> ${{ product.price }}</p>
         </div>
         {% endfor %}
     </div>
-</body>
-</html>
+    <a href="{% url 'add_product' %}" class="button">Agregar</a>
+
+{% endblock content %}
