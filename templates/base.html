@@ -9,7 +9,7 @@
     {% if user.is_authenticated %}
         Hola, {{ user.username }}
     {% else %}
-        <a href="{% url "login" %}">Ingresar</a>
+        <a href="{% url 'login' %}">Ingresar</a>
     {% endif %}
     <div class="container">
         {% block content %} 

@@ -78,10 +78,22 @@ WSGI_APPLICATION = 'coffee_shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# SQLITE BY DEFAULT
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "coffe_shop",
+        "USER": "admin",
+        "PASSWORD": "admin123",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
