@@ -86,6 +86,7 @@ WSGI_APPLICATION = 'coffee_shop.wsgi.application'
 #     }
 # }
 
+# docker run --name coffe_db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=coffe_shop -p 5432:5432 -v C:\Users\DLopez\OneDrive\Desktop\Proyects\db:/var/lib/postgresql/data -d postgres
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
