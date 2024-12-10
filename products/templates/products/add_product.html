@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUCT LIST</title>
-</head>
-<body>
-    <h1>PRODUCT FORM</h1>
-    <form action="{% url "add_product" %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="Submit">Agregar</button>
-    </form>
-    <a href="{% url 'all_products' %}" class="button">Volver</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% load static %}
+{% block content %}
+<main class="flex flex-col items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+    <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">PRODUCT FORM</h1>
+    <div class="max-w-xl lg:max-w-3xl">
+        <form action="{% url "add_product" %}" method="POST" class="mt-8 grid grid-cols-1 gap-6" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="Submit" class="bg-yellow-400 hover:scale-105 font-bold py-2 px-4 rounded shadow">Agregar</button>
+        </form>
+    </div>
+</main>
+<a href="{% url 'all_products' %}" class="button">Volver</a>
+{% endblock content %}
+
