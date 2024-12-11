@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+{% load static %}
+{% block content %}
+<main class="flex flex-col items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+    <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">PRODUCT FORM</h1>
+    <div class="max-w-xl lg:max-w-3xl">
+        <form action="{% url "register" %}" method="POST" class="mt-8 grid grid-cols-1 gap-6" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="Submit" class="bg-yellow-400 hover:scale-105 font-bold py-2 px-4 rounded shadow">Registrar</button>
+        </form>
+    </div>
+</main>
+{% endblock content %}
+    

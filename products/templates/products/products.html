@@ -21,7 +21,7 @@
               </svg>
             </button>
             {% if product.photo %}
-                <img src="{{ product.photo }}" alt="{{ product.name }}" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"/>
+                <img src="{{ product.photo.url }}" alt="{{ product.name }}" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"/>
             {% else %}
                 <img src="{% static "images/placeholder.png" %}" alt="PlaceHolder" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"/>
             {% endif %}
