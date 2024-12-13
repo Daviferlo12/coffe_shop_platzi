@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'crispy_forms',
     'crispy_tailwind',
     'products',
@@ -151,3 +152,9 @@ LOGIN_REDIRECT_URL = "all_products"
 LOGOUT_REDIRECT_URL = 'all_products'
 # LOGIN WHEN USER IS NOT LOGUED
 LOGIN_URL = 'login'
+
+# REST FRAMEWORK
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10
+# }
