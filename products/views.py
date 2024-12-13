@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import FormView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 # MODELS
 from products.models import Product
 from products.forms import ProductForm
@@ -15,7 +16,7 @@ class ProductListView(TemplateView):
             "products_list" : products_list
         }
         
-class ProductFormView(FormView):
+class ProductFormView(LoginRequiredMixin, FormView):
     template_name = "products/add_product.html"
     form_class = ProductForm
     success_url = reverse_lazy("all_products")

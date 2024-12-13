@@ -27,11 +27,16 @@
                 <ul class="list-disc">
                     <p class="ml-4">PRODUCTOS: </p>
                     {% for order_item in order.order_product_set.all %}
-                        <li>
-                            <p class="ml-4">{{order_item.product.name }} : {{order_item.product.price }}</p>
-                            {% empty %}
-                            <p class="text-lg font-bold text-gray-900">No hay productos en la order</p>
-                        </li>
+                        <li class="flex items-center justify-between">
+                          <p class="ml-4">{{ order_item.product.name }} : {{ order_item.product.price }}</p>
+                          <form action="{% url 'DeleteOrderProduct' order_item.id %}" method="post">
+                              {% csrf_token %}
+                              <input type="hidden" name="order_item.id" value="{{ order_item.id }}">
+                              <button class="text-red-500 underline hover:text-red-700 font-medium">
+                                  Eliminar
+                              </button>
+                          </form>
+                      </li>
                     {% endfor %}
                 </ul>
                 </li>
