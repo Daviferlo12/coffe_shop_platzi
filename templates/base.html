@@ -23,9 +23,9 @@
                     <!-- Aquí puedes añadir más elementos de navegación -->
                     <a class="underline decoration-sky-500 mx-6">COFFE SHOP</a>
                     {% if user.is_authenticated %}
-                        <button class="bg-yellow-400 hover:scale-105 font-bold py-2 px-4 rounded shadow" type="submit">
+                        <a href="{% url 'MyOrder' %}" class="bg-yellow-400 hover:scale-105 font-bold py-2 px-4 rounded shadow">
                             Mi Pedido
-                        </button>
+                        </a>
                     {% endif %}
                 </nav>
     
